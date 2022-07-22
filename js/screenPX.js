@@ -10,3 +10,17 @@ function screen() {
    = "Width : " + Width + " px" 
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+

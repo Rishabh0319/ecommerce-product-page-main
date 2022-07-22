@@ -120,6 +120,15 @@ section {
    color: var(--darkGrayishBlue);
 }
 
+.image-slide-button-left,.image-slide-button-right
+{
+    display: none;
+}
+.left-side-header ion-icon
+{
+   display: none;
+}
+
 .header .right-side-header {
     /* border: 1px solid black; */
     display: flex;
@@ -345,8 +354,23 @@ section {
 }
 
 
+
+
+
+
+
+
+
+
+
 @media screen and (max-width: 980px)
 {
+
+    .left-side-header .menulist
+    {
+        display: flex;
+    }
+
    .container{
        width: 100%;
    }
@@ -362,6 +386,11 @@ section {
       /* border: 1px solid orange; */
       width: 70%;
       margin-left: 0px;
+   }
+
+   .image-slide-button-left,.image-slide-button-right
+   {
+      display: none;
    }
 
    .header .left-side-header .menulist
@@ -400,11 +429,13 @@ section {
 
 
 
+
+
 @media screen and (max-width: 817px)
 {
    .container
    {
-      border: 2px solid red;
+      /* border: 2px solid red; */
       grid-template-columns: repeat(12, 1fr);
       grid-template-rows: auto auto auto;
       height: auto;
@@ -412,18 +443,29 @@ section {
 
    .header
    {
-      border: 2px solid green;
+      /* border: 2px solid green; */
    }
 
    .left-side
    {
-     border: 2px solid yellow;
+     /* border: 2px solid yellow; */
      grid-column: 1 / span 12;
+   }
+
+   .left-side-header .menulist
+    {
+        display: flex;
+    }
+
+   /* hide image slide buttons */
+   .image-slide-button-left,.image-slide-button-right
+   {
+      display: none;
    }
 
    .right-side
    {
-    border: 2px solid blue;
+    /* border: 2px solid blue; */
     grid-column: 1 / span 12;
     padding: 0px 10%; 
     align-content: space-around;
@@ -463,6 +505,11 @@ section {
 
    }
 
+   .product-price .actual-price
+   {
+     margin-left: 10%;
+   }
+
    .final-area
    {
     /* border: 1px solid black; */
@@ -471,16 +518,63 @@ section {
     align-items: flex-start !important;
    }
 
+   .final-area .quantity
+   {
+     /* border: 1px solid green; */
+   }
+
    .final-area .add-to-cart-button
    {
       margin-top: 10%;
    }
+ 
+
+
 
 }
 
 
 
 
+
+
+
+
+
+@media (max-width: 753px){
+    .left-side-header .menulist
+    {
+        display: none;
+    }
+
+    .product-price .final-area
+    {
+        display: flex;
+        align-items: center;
+    }
+
+    #leftmenu
+   {
+     display: block;
+     font-size: 30px !important;
+     margin-right: 20px;
+     cursor: pointer;
+   }
+   
+
+   .header .left-side-header
+   {
+      /* border: 1px solid red; */
+      display: flex !important;
+      justify-content: space-between !important;
+      width: 30% !important;
+   }
+
+   .right-side
+   {
+     margin-bottom: 30px;
+   }
+}
 
 
 
@@ -506,18 +600,36 @@ section {
 
      margin: 0;
      padding: 0;
+
+     overflow: auto;
    }
 
    .header
    {
-      border: 1px solid red;
+      /* border: 1px solid red; */
       grid-column: 1 / span 12;
-      background-color: red;
+      
+      padding: 0px !important;
+      grid-column-gap: 80px;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 100;
+      background-color: #fff;
+      width: 100%;
    }
 
    .header .left-side-header
    {
-      border: 1px solid green;
+      /* border: 1px solid green; */
+      display: flex;
+      justify-content: flex-start;
+   }
+
+   .header .left-side-header #leftmenu
+   {
+      margin: 0 1rem 0 1rem;
+      font-size: 2rem; 
    }
 
    .left-side-header .menulist
@@ -527,17 +639,164 @@ section {
 
    .header .right-side-header
    {
-      border: 1px solid blue;
+      /* border: 1px solid blue; */
+      position: absolute;
+      right: 0;
+      width: 30% !important;
+      margin: 0 !important;
+   }
+
+   .header .right-side-header .addtocartheadericon
+   {
+      /* border: 1px solid red; */
+      height: 50px;
+      width: 50px;
+      position: relative;
+      margin: 0px !important;  
+   }
+
+   .header .right-side-header .addtocartheadericon img
+   {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%,-50%);
+      width: 60%;
+      height: 60%;
    }
 
    .left-side
    {
-        
+      /* border: 1px solid red;  */
+      margin-top: 100px;
+   }
+
+   .left-side .product-image
+   {
+      /* border: 1px solid green; */
+      width: 100% !important;
+      border-radius: 0px;
+      position: relative;
+   }
+
+
+   .left-side .product-sub-image
+   {
+     display: none;
+   }
+
+   .product-image .image-slide-button-left
+   {
+     position: absolute;  
+     border: 1px solid black;
+     background-color: #fff;
+     height: 50px;
+     width: 50px;
+     top: 40%;
+     left: 0;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     border-radius: 50%;
+     margin-left: 10px;
+   }
+
+   .product-image .image-slide-button-right
+   {
+     position: absolute;
+     border: 1px solid black;
+     background-color: #fff;
+     height: 50px;
+     width: 50px;
+     top: 40%;
+     right: 0;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     border-radius: 50%;
+     margin-right: 10px;
+   }
+
+   .product-image .image-slide-button-left ion-icon
+   {
+     font-size: 30px; 
+     font-weight: 800;  
+   }
+
+   .product-image .image-slide-button-right ion-icon
+   {
+    font-size: 30px; 
+    font-weight: 800;  
    }
 
    .right-side
    {
+      /* border: 1px solid red; */
+      padding-bottom: 30px;
+   }
 
+   .right-side .product-price
+   {
+     /* border: 1px solid green; */
+     display: flex !important;
+     justify-content: space-between;
+   }
+
+   .right-side .product-description p
+   {
+      font-size: 18px;
+   }
+
+   .right-side .product-price h2
+   {
+     font-size: 30px;
+   }
+
+   .right-side .product-price .discount
+   {
+     margin-left: 20px;
+     font-size: 20px;
+   }
+
+   .final-area .quantity
+   {
+     /* border: 1px solid red; */
+     width: 100% !important; 
+     margin-top: 20px;
+   }
+
+   .final-area .quantity span
+   {
+      font-size: 20px;
+      font-weight: 800;
+   }
+
+   .final-area .quantity .minus
+   {
+     font-size: 30px; 
+   }
+
+   .final-area .quantity .plus
+   {
+    font-size: 30px;
+   }
+
+   .final-area .add-to-cart-frame
+   {
+     /* border: 1px solid black; */
+     width: 100%;
+   }
+
+   .final-area .add-to-cart-frame .add-to-cart-button
+   {
+    width: 100%;
+    height: 60px;
+    font-size: 20px;
+   }
+
+   .final-area .add-to-cart-frame .add-to-cart-button ion-icon
+   {
+     font-size: 25px;
    }
 }
 
