@@ -29,7 +29,35 @@
       </div>
       <div class="right-side-header">
         <div class="addtocartheadericon">
+          <div class="cartQuantityIndecator">0</div>
           <img src="./images/icon-cart.svg" alt="cart">
+          <div class="cart-frame">
+             <div class="cart-frame-header">
+                <p>cart</p>
+             </div> 
+             <div class="cart-frame-container">
+                 <p class="cart-msg">Your cart is empty.</p>
+                 <div class="cartItemContainer">
+                   <div class="itemInfo">
+                      <div class="imgCont">
+                        <img src="./images/image-product-1.jpg" alt="product-image">
+                      </div> 
+                      <div class="itemDataInfoContainer">
+                        <p class="titleData" id="titleData">title</p>
+                        <div class="itemDataInfo">
+                          <span style="font-size: 14px;">$</span><p class="priceData">125.00 </p> <span style="font-size: 14px; margin-right: 4px">x</span> <p class="quantityData"> 2 </p> <span style="font-weight: bolder; color: #000; font-size: 14px;">$</span> <p class="totalPriceData" style="font-weight: bolder; color: #000;">250.00</p>
+                        </div>
+                      </div> 
+                      <div class="deleteItem">
+                        <ion-icon style="color: #333; font-size: 18px;" name="trash-outline"></ion-icon>
+                      </div>
+                   </div>
+                   <div class="checkoutButton">
+                      Checkout
+                   </div>
+                 </div>
+             </div>
+          </div>
         </div>
         <div class="user-profile">
           <img src="./images/image-avatar.png" alt="userProfile">
@@ -40,14 +68,14 @@
     <section class="left-side">
       <div class="product-image">
         <div class="image-slide-button-left"><ion-icon name="chevron-back-outline"></ion-icon></div>
-        <img src="./images/image-product-1.jpg" alt="productImage">
+         <img src="./images/image-product-1.jpg" id="productImage" alt="productImage">
         <div class="image-slide-button-right"><ion-icon name="chevron-forward-outline"></ion-icon></div>
       </div>
       <div class="product-sub-image">
-        <div class="sub-image"><img src="./images/image-product-1-thumbnail.jpg" alt="" /></div>
-        <div class="sub-image"><img src="./images/image-product-2-thumbnail.jpg" alt="" /></div>
-        <div class="sub-image"><img src="./images/image-product-3-thumbnail.jpg" alt="" /></div>
-        <div class="sub-image"><img src="./images/image-product-4-thumbnail.jpg" alt="" /></div>
+        <div class="sub-image"><img src="./images/image-product-1.jpg" alt="" /></div>
+        <div class="sub-image"><img src="./images/image-product-2.jpg" alt="" /></div>
+        <div class="sub-image"><img src="./images/image-product-3.jpg" alt="" /></div>
+        <div class="sub-image"><img src="./images/image-product-4.jpg" alt="" /></div>
       </div>
     </section>
     
@@ -73,7 +101,7 @@
       </div>
       <div class="final-area">
         <div class="quantity">
-          <span class="minus">-</span> <span>0</span> <span class="plus">+</span>
+          <span class="minus">-</span><span class="PMquantity">0</span> <span class="plus">+</span>
         </div>
         <div class="add-to-cart-frame">
           <button class="add-to-cart-button">
@@ -96,6 +124,7 @@
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
   <script src="./js/screenPX.js" async defer></script>
+  <script src="./js/script.js" async defer></script>
 </body>
 
 </html>
